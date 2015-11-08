@@ -1,6 +1,6 @@
 class Api::SlashCommandsController < ApplicationController
   def create
-    render json: params
+    render json: {"text": "Received"}
   end
 
   private
