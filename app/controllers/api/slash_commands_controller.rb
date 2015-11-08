@@ -1,7 +1,6 @@
 class Api::SlashCommandsController < ApplicationController
   def create
-    puts request.body.read
-    render json: {"text" => "Received"}
+    render json: {"text" => request.body.read}
   end
 
   private
