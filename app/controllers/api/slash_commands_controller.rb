@@ -1,16 +1,17 @@
 class Api::SlashCommandsController < ApplicationController
   def create
-    render json: {
-                  "token" => slash_command_params[:token],
-                  "team_id" => slash_command_params[:team_id],
-                  "team_domain" => slash_command_params[:team_domain],
-                  "channel_id" => slash_command_params[:channel_id],
-                  "channel_name" => slash_command_params[:channel_name],
-                  "user_id" => slash_command_params[:user_id],
-                  "user_name" => slash_command_params[:user_name],
-                  "command" => slash_command_params[:command],
-                  "text" => slash_command_params[:text],
-                  "response_url" => slash_command_params[:response_url]
+    render json: { "text" => <<-STRING
+                        #{slash_command_params[:token]},
+                        #{slash_command_params[:team_id]},
+                        #{slash_command_params[:team_domain]},
+                        #{slash_command_params[:channel_id]},
+                        #{slash_command_params[:channel_name]},
+                        #{slash_command_params[:user_id]},
+                        #{slash_command_params[:user_name]},
+                        #{slash_command_params[:command]},
+                        #{slash_command_params[:text]},
+                        #{slash_command_params[:response_url]}
+                    STRING
                  }
   end
 
