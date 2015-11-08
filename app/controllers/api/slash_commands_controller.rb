@@ -1,6 +1,6 @@
 class Api::SlashCommandsController < ApplicationController
   def create
-    render json: slash_command_params
+    render json: slash_command_params[:user_name]
   end
 
   private
