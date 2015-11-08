@@ -6,6 +6,5 @@ class Api::SlashCommandsController < ApplicationController
   private
 
   def slash_command_params
-    params.permit(:username)
   end
 end
